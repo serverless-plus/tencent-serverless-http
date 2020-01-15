@@ -1,4 +1,4 @@
-# Tencent Serverless Nodejs
+# Tencent Serverless Http
 
 [![Build Status](https://travis-ci.com/yugasun/tencent-serverless-http.svg?branch=master)](https://travis-ci.com/yugasun/tencent-serverless-http)
 [![npm](https://img.shields.io/npm/v/tencent-serverless-http.svg)]()
