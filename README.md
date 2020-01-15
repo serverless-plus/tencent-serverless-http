@@ -6,7 +6,7 @@
 [![dependencies Status](https://david-dm.org/yugasun/tencent-serverless-nodejs/status.svg)](https://david-dm.org/yugasun/tencent-serverless-nodejs)
 
 This project is a fork of
-[tencent-serverless-nodejs](https://github.com/yugasun/tencent-serverless-nodejs),
+[aws-serverless-express](https://github.com/awslabs/aws-serverless-express.git),
 and modify for tencent cloud scf.
 
 ## Install
