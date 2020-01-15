@@ -16,9 +16,9 @@ directory which allows developers to quickly deploy a running application using 
 
 This repository should contain:
 
-- The tencent-serverless-nodejs library.
-- Documentation on using tencent-serverless-nodejs
-- Examples of using the tencent-serverless-nodejs library.
+- The tencent-serverless-http library.
+- Documentation on using tencent-serverless-http
+- Examples of using the tencent-serverless-http library.
 
 This repository does not contain:
 

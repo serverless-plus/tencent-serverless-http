@@ -99,7 +99,7 @@ function forwardResponseToApiGateway (server, response, resolver) {
 }
 
 function forwardConnectionErrorResponseToApiGateway (error, resolver) {
-  console.log('ERROR: tencent-serverless-nodejs connection error')
+  console.log('ERROR: tencent-serverless-http connection error')
   console.error(error)
   const errorResponse = {
     statusCode: 502, // "DNS resolution, TCP level errors, or actual HTTP parse errors" - https://nodejs.org/api/http.html#http_http_request_options_callback
@@ -111,7 +111,7 @@ function forwardConnectionErrorResponseToApiGateway (error, resolver) {
 }
 
 function forwardLibraryErrorResponseToApiGateway (error, resolver) {
-  console.log('ERROR: tencent-serverless-nodejs error')
+  console.log('ERROR: tencent-serverless-http error')
   console.error(error)
   const errorResponse = {
     statusCode: 500,
@@ -174,7 +174,7 @@ function createServer (requestListener, serverListenCallback, binaryTypes) {
     .on('error', (error) => {
       /* istanbul ignore else */
       if (error.code === 'EADDRINUSE') {
-        console.warn(`WARNING: Attempting to listen on socket ${getSocketPath(server._socketPathSuffix)}, but it is already in use. This is likely as a result of a previous invocation error or timeout. Check the logs for the invocation(s) immediately prior to this for root cause, and consider increasing the timeout and/or cpu/memory allocation if this is purely as a result of a timeout. tencent-serverless-nodejs will restart the Node.js server listening on a new port and continue with this request.`)
+        console.warn(`WARNING: Attempting to listen on socket ${getSocketPath(server._socketPathSuffix)}, but it is already in use. This is likely as a result of a previous invocation error or timeout. Check the logs for the invocation(s) immediately prior to this for root cause, and consider increasing the timeout and/or cpu/memory allocation if this is purely as a result of a timeout. tencent-serverless-http will restart the Node.js server listening on a new port and continue with this request.`)
         server._socketPathSuffix = getRandomString()
         return server.close(() => startServer(server))
       } else {

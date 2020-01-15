@@ -4,14 +4,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const compression = require('compression')
-const tencentServerlessNodejsMiddleware = require('tencent-serverless-nodejs/middleware')
+const tencentServerlessNodejsMiddleware = require('tencent-serverless-http/middleware')
 const app = express()
 const router = express.Router()
 
 app.set('view engine', 'pug')
 
 if (process.env.NODE_ENV === 'test') {
-  // NOTE: tencent-serverless-nodejs uses this app for its integration tests
+  // NOTE: tencent-serverless-http uses this app for its integration tests
   // and only applies compression to the /sam endpoint during testing.
   router.use('/sam', compression())
 } else {
@@ -88,7 +88,7 @@ const users = [{
 }]
 let userIdCounter = users.length
 
-// The tencent-serverless-nodejs library creates a server and listens on a Unix
+// The tencent-serverless-http library creates a server and listens on a Unix
 // Domain Socket for you, so you can remove the usual call to app.listen.
 // app.listen(3000)
 app.use('/', router)
