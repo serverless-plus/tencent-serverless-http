@@ -9,11 +9,13 @@ This project is a fork of
 [tencent-serverless-nodejs](https://github.com/yugasun/tencent-serverless-nodejs),
 and modify for tencent cloud scf.
 
-## Getting Started
+## Install
 
 ```bash
 npm install tencent-serverless-nodejs
 ```
+
+## Usage
 
 ```js
 // handler.js
