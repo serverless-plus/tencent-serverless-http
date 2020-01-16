@@ -1,6 +1,6 @@
 {
   "name": "tencent-serverless-http",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This library enables you to utilize Tencent Cloud API Gateway to respond to web and API requests using your existing Node.js application framework.",
   "keywords": [
     "tencent-cloud",

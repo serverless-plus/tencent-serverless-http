@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/yugasun/tencent-serverless-http/compare/v1.0.3...v1.0.4) (2020-01-16)
+
+
+### Bug Fixes
+
+* update lowest node version to 8 ([654b6b8](https://github.com/yugasun/tencent-serverless-http/commit/654b6b8))
+
 ## [1.0.1](https://github.com/yugasun/tencent-serverless-http/compare/v1.0.0...v1.0.1) (2020-01-15)
 
 
