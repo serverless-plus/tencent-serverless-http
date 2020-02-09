@@ -18,7 +18,7 @@ const url = require('url')
 const isType = require('type-is')
 
 function getPathWithQueryStringParams (event) {
-  return url.format({ pathname: event.path, query: event.queryStringParameters })
+  return url.format({ pathname: event.path, query: event.queryString })
 }
 function getEventBody (event) {
   return Buffer.from(event.body, event.isBase64Encoded ? 'base64' : 'utf8')
