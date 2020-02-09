@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/yugasun/tencent-serverless-http/compare/v1.0.4...v1.0.5) (2020-02-09)
+
+
+### Bug Fixes
+
+* get tencent api query ([6e740ab](https://github.com/yugasun/tencent-serverless-http/commit/6e740ab))
+
 ## [1.0.4](https://github.com/yugasun/tencent-serverless-http/compare/v1.0.3...v1.0.4) (2020-01-16)
 
 
