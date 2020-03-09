@@ -1,9 +1,8 @@
 # Tencent Serverless Http
 
-[![Build Status](https://travis-ci.com/yugasun/tencent-serverless-http.svg?branch=master)](https://travis-ci.com/yugasun/tencent-serverless-http)
-[![npm](https://img.shields.io/npm/v/tencent-serverless-http.svg)]()
-[![npm](https://img.shields.io/npm/dm/tencent-serverless-http.svg)]()
-[![dependencies Status](https://david-dm.org/yugasun/tencent-serverless-http/status.svg)](https://david-dm.org/yugasun/tencent-serverless-http)
+[![Build Status](https://travis-ci.com/serverless-plus/tencent-serverless-http.svg?branch=master)](https://travis-ci.com/serverless-plus/tencent-serverless-http)
+[![npm](https://img.shields.io/npm/v/%40slsplus%2Ftencent-serverless-http.svg)](http://www.npmtrends.com/%40slsplus%2Ftencent-serverless-http)
+[![NPM downloads](https://img.shields.io/npm/dm/%40slsplus%2Ftencent-serverless-http.svg)](http://www.npmtrends.com/%40slsplus%2Ftencent-serverless-http)
 
 This project is a fork of
 [aws-serverless-express](https://github.com/awslabs/aws-serverless-express.git),
@@ -12,7 +11,7 @@ and modify for tencent cloud scf.
 ## Install
 
 ```bash
-npm install tencent-serverless-http
+npm install @slsplus/tencent-serverless-http
 ```
 
 ## Usage
@@ -20,7 +19,7 @@ npm install tencent-serverless-http
 ```js
 // handler.js
 'use strict';
-const tencentServerlessHttp = require('tencent-serverless-http');
+const tencentServerlessHttp = require('@slsplus/tencent-serverless-http');
 const app = require('./app');
 const server = tencentServerlessHttp.createServer(app);
 
@@ -29,11 +28,11 @@ exports.handler = (event, context) => {
 };
 ```
 
-This package includes middleware to easily get the event object Lambda receives
+This package includes middleware to easily get the event object SCF receives
 from API Gateway
 
 ```js
-const tencentServerlessHttpMiddleware = require('tencent-serverless-http/middleware');
+const tencentServerlessHttpMiddleware = require('@slsplus/tencent-serverless-http/middleware');
 app.use(tencentServerlessHttpMiddleware.eventContext());
 app.get('/', (req, res) => {
   res.json(req.apiGateway.event);
