@@ -1,6 +1,9 @@
 {
-  "name": "tencent-serverless-http",
+  "name": "@slsplus/tencent-serverless-http",
   "version": "1.0.5",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "This library enables you to utilize Tencent Cloud API Gateway to respond to web and API requests using your existing Node.js application framework.",
   "keywords": [
     "tencent-cloud",
@@ -10,9 +13,9 @@
     "scf",
     "nodejs"
   ],
-  "homepage": "https://github.com/yugasun/tencent-serverless-http",
+  "homepage": "https://github.com/serverless-plus/tencent-serverless-http",
   "bugs": {
-    "url": "https://github.com/yugasun/tencent-serverless-http/issues"
+    "url": "https://github.com/serverless-plus/tencent-serverless-http/issues"
   },
   "license": "Apache-2.0",
   "files": [
@@ -23,7 +26,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yugasun/tencent-serverless-http.git"
+    "url": "https://github.com/serverless-plus/tencent-serverless-http.git"
   },
   "engines": {
     "node": ">=8"

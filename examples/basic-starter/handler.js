@@ -1,5 +1,5 @@
 'use strict'
-const awsServerlessExpress = require(process.env.NODE_ENV === 'test' ? '../../index' : 'tencent-serverless-http')
+const serverlessExpress = require(process.env.NODE_ENV === 'test' ? '../../index' : '@slsplus/tencent-serverless-http')
 const app = require('./app')
 
 // NOTE: If you get ERR_CONTENT_DECODING_FAILED in your browser, this is likely
@@ -25,6 +25,6 @@ const binaryMimeTypes = [
   'text/text',
   'text/xml'
 ]
-const server = awsServerlessExpress.createServer(app, null, binaryMimeTypes)
+const server = serverlessExpress.createServer(app, null, binaryMimeTypes)
 
-exports.handler = (event, context) => awsServerlessExpress.proxy(server, event, context)
+exports.handler = (event, context) => serverlessExpress.proxy(server, event, context)

@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const compression = require('compression')
-const tencentServerlessNodejsMiddleware = require('tencent-serverless-http/middleware')
+const tencentServerlessNodejsMiddleware = require('@slsplus/tencent-serverless-http/middleware')
 const app = express()
 const router = express.Router()
 
@@ -28,7 +28,9 @@ app.set('views', path.join(__dirname, 'views'))
 
 router.get('/', (req, res) => {
   res.render('index', {
-    apiUrl: req.apiGateway ? `https://${req.apiGateway.event.headers.Host}/${req.apiGateway.event.requestContext.stage}` : 'http://localhost:3000'
+    apiUrl: req.apiGateway
+      ? `https://${req.apiGateway.event.headers.Host}/${req.apiGateway.event.requestContext.stage}`
+      : 'http://localhost:3000'
   })
 })
 
@@ -75,17 +77,21 @@ router.delete('/users/:userId', (req, res) => {
   res.json(users)
 })
 
-const getUser = (userId) => users.find(u => u.id === parseInt(userId))
-const getUserIndex = (userId) => users.findIndex(u => u.id === parseInt(userId))
+const getUser = (userId) => users.find((u) => u.id === parseInt(userId))
+const getUserIndex = (userId) =>
+  users.findIndex((u) => u.id === parseInt(userId))
 
 // Ephemeral in-memory data store
-const users = [{
-  id: 1,
-  name: 'Joe'
-}, {
-  id: 2,
-  name: 'Jane'
-}]
+const users = [
+  {
+    id: 1,
+    name: 'Joe'
+  },
+  {
+    id: 2,
+    name: 'Jane'
+  }
+]
 let userIdCounter = users.length
 
 // The tencent-serverless-http library creates a server and listens on a Unix
