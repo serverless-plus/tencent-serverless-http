@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.0.6...v1.0.7) (2020-03-17)
+
+
+### Bug Fixes
+
+* remove module name prefix ([2222497](https://github.com/serverless-plus/tencent-serverless-http/commit/22224979dc4f40a775cc724aa0111013f61c5a7a))
+
 ## [1.0.5](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.0.4...v1.0.5) (2020-02-09)
 
 
