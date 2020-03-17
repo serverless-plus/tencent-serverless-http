@@ -1,5 +1,5 @@
 'use strict'
-const serverlessExpress = require(process.env.NODE_ENV === 'test' ? '../../index' : '@slsplus/tencent-serverless-http')
+const serverlessExpress = require(process.env.NODE_ENV === 'test' ? '../../index' : 'tencent-serverless-http')
 const app = require('./app')
 
 // NOTE: If you get ERR_CONTENT_DECODING_FAILED in your browser, this is likely

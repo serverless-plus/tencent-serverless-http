@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const compression = require('compression')
-const tencentServerlessNodejsMiddleware = require('@slsplus/tencent-serverless-http/middleware')
+const tencentServerlessNodejsMiddleware = require('tencent-serverless-http/middleware')
 const app = express()
 const router = express.Router()
 
