@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.0.7...v1.1.0) (2020-04-24)
+
+
+### Features
+
+* remove unuse remarks ([7ee5e67](https://github.com/serverless-plus/tencent-serverless-http/commit/7ee5e67))
+
 ## [1.0.7](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.0.6...v1.0.7) (2020-03-17)
 
 
