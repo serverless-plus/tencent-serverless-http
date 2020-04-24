@@ -70,7 +70,7 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "git add"
+      "git add ."
     ]
   },
   "commitlint": {
@@ -118,6 +118,7 @@
     "install-example-dependencies": "cd examples && npm install --prefix basic-starter basic-starter && cd .."
   },
   "dependencies": {
+    "@tencent-sdk/capi": "^0.2.15",
     "type-is": "^1.6.16"
   },
   "config": {

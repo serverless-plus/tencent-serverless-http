@@ -17,6 +17,8 @@ const http = require('http')
 const url = require('url')
 const isType = require('type-is')
 
+const Report = require('./report')
+
 function getPathWithQueryStringParams (event) {
   return url.format({ pathname: event.path, query: event.queryString })
 }
@@ -92,7 +94,7 @@ function forwardResponseToApiGateway (server, response, resolver) {
       const contentType = getContentType({ contentTypeHeader: headers['content-type'] })
       const isBase64Encoded = isContentTypeBinaryMimeType({ contentType, binaryMimeTypes: server._binaryTypes })
       const body = bodyBuffer.toString(isBase64Encoded ? 'base64' : 'utf8')
-      const successResponse = {statusCode, body, headers, isBase64Encoded}
+      const successResponse = { statusCode, body, headers, isBase64Encoded }
 
       resolver.succeed({ response: successResponse })
     })
@@ -123,6 +125,15 @@ function forwardLibraryErrorResponseToApiGateway (error, resolver) {
 }
 
 function forwardRequestToNodeServer (server, event, context, resolver) {
+  const report = new Report(event, context)
+  report.reportRequest()
+  const _succeed = resolver.succeed.bind(resolver)
+  resolver.succeed = (response) => {
+    report.reportResponse(response).then(function () {
+      _succeed(response)
+    })
+  }
+
   try {
     const requestOptions = mapApiGatewayEventToHttpRequest(event, context, getSocketPath(server._socketPathSuffix))
     const req = http.request(requestOptions, (response) => forwardResponseToApiGateway(server, response, resolver))
