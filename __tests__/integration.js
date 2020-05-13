@@ -24,9 +24,9 @@ function makeEvent (eventOverrides) {
 function expectedRootResponse () {
   return makeResponse({
     'headers': {
-      'content-length': '3446',
+      'content-length': '3321',
       'content-type': 'text/html; charset=utf-8',
-      'etag': 'W/"d76-UV3AoJfpe2/C0l+IRqFcasVbyD0"'
+      'etag': 'W/"cf9-GYAvM/JE23lcw+qXvQGUeB9SXHg"'
     }
   })
 }
