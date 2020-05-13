@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.1.0...v1.2.0) (2020-05-13)
+
+
+### Features
+
+* remove event and context header ([8b03cbf](https://github.com/serverless-plus/tencent-serverless-http/commit/8b03cbf))
+
 # [1.1.0](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.0.7...v1.1.0) (2020-04-24)
 
 
