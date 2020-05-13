@@ -35,18 +35,11 @@ function mapApiGatewayEventToHttpRequest (event, context, socketPath) {
   const clonedEventWithoutBody = clone(event)
   delete clonedEventWithoutBody.body
 
-  headers['x-apigateway-event'] = encodeURIComponent(JSON.stringify(clonedEventWithoutBody))
-  headers['x-apigateway-context'] = encodeURIComponent(JSON.stringify(context))
-
   return {
     method: event.httpMethod,
     path: getPathWithQueryStringParams(event),
     headers,
     socketPath
-    // protocol: `${headers['X-Forwarded-Proto']}:`,
-    // host: headers.Host,
-    // hostname: headers.Host, // Alias for host
-    // port: headers['X-Forwarded-Port']
   }
 }
 
