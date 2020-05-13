@@ -8,7 +8,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "tencent-serverless-http": "^2.0.0",
+    "tencent-serverless-http": "^1.2.0",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "cors": "^2.8.3",
