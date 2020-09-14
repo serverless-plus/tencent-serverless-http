@@ -37,6 +37,7 @@ function mapApiGatewayEventToHttpRequest (event, context, socketPath) {
 
   return {
     method: event.httpMethod,
+    protocol: headers['x-api-scheme'] || 'http',
     path: getPathWithQueryStringParams(event),
     headers,
     socketPath
