@@ -4,7 +4,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const compression = require('compression')
-const tencentServerlessNodejsMiddleware = require('tencent-serverless-http/middleware')
 const app = express()
 const router = express.Router()
 
@@ -21,7 +20,6 @@ if (process.env.NODE_ENV === 'test') {
 router.use(cors())
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
-router.use(tencentServerlessNodejsMiddleware.eventContext())
 
 // NOTE: tests can't find the views directory without this
 app.set('views', path.join(__dirname, 'views'))

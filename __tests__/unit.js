@@ -70,6 +70,7 @@ test('mapApiGatewayEventToHttpRequest: with headers', () => {
   expect(r.httpRequest).toEqual({
     method: 'GET',
     path: '/foo',
+    protocol: 'http:',
     headers: {
       'x-foo': 'foo',
       'Content-Length': Buffer.byteLength('Hello serverless!')
@@ -84,6 +85,7 @@ test('mapApiGatewayEventToHttpRequest: without headers', () => {
   expect(r.httpRequest).toEqual({
     method: 'GET',
     path: '/foo',
+    protocol: 'http:',
     headers: {
       'Content-Length': Buffer.byteLength('Hello serverless!')
     },

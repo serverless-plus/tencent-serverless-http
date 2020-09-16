@@ -28,13 +28,8 @@ exports.handler = (event, context) => {
 };
 ```
 
-This package includes middleware to easily get the event object SCF receives
-from API Gateway
+## License
 
-```js
-const tencentServerlessHttpMiddleware = require('tencent-serverless-http/middleware');
-app.use(tencentServerlessHttpMiddleware.eventContext());
-app.get('/', (req, res) => {
-  res.json(req.apiGateway.event);
-});
-```
+MIT License
+
+Copyright (c) 2020 Serverless Plus
