@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.2.0...v1.3.0) (2020-09-16)
+
+
+### Features
+
+* remove middleware ([e40dbea](https://github.com/serverless-plus/tencent-serverless-http/commit/e40dbea))
+
 # [1.2.0](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.1.0...v1.2.0) (2020-05-13)
 
 
