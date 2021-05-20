@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.3.1...v1.3.2) (2021-05-20)
+
+
+### Bug Fixes
+
+* set isBase64Encoded when content-encoding ([d3d23a4](https://github.com/serverless-plus/tencent-serverless-http/commit/d3d23a4))
+
 ## [1.3.1](https://github.com/serverless-plus/tencent-serverless-http/compare/v1.3.0...v1.3.1) (2020-09-17)
 
 
