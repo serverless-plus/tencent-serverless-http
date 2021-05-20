@@ -37,6 +37,7 @@ jobs:
         run: |
           npm update --no-save
           npm update --save-dev --no-save
+          npm run install-example-dependencies
 
       - name: Lint
         run: npm run lint
