@@ -4,6 +4,16 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage",
+    "release": "semantic-release",
+    "release-local": "node -r dotenv/config node_modules/semantic-release/bin/semantic-release --no-ci",
+    "check-dependencies": "npx npm-check --skip-unused --update",
+    "lint": "eslint src examples",
+    "install-example-dependencies": "cd examples && npm install --prefix basic-starter basic-starter && cd .."
+  },
   "description": "This library enables you to utilize Tencent Cloud API Gateway to respond to web and API requests using your existing Node.js application framework.",
   "keywords": [
     "tencent-cloud",
@@ -30,36 +40,6 @@
   "engines": {
     "node": ">=8"
   },
-  "release": {
-    "verifyConditions": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git",
-      "@semantic-release/github"
-    ],
-    "publish": [
-      "@semantic-release/changelog",
-      {
-        "path": "@semantic-release/npm",
-        "npmPublish": true,
-        "tarballDir": "dist"
-      },
-      {
-        "path": "@semantic-release/git",
-        "assets": [
-          "package.json",
-          "package-lock.json",
-          "CHANGELOG.md",
-          "dist/**/*.{js|css}"
-        ],
-        "message": "chore(release): version ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      },
-      {
-        "path": "@semantic-release/github",
-        "assets": "dist/*.tgz"
-      }
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && npm run install-example-dependencies",
@@ -70,19 +50,6 @@
     "*.js": [
       "eslint --fix",
       "git add ."
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "eslintIgnore": [
-    "examples/*/node_modules"
-  ],
-  "jest": {
-    "collectCoverageFrom": [
-      "src/*"
     ]
   },
   "devDependencies": {
@@ -105,16 +72,6 @@
     "jest": "^24.5.0",
     "lint-staged": "^7.2.0",
     "semantic-release": "^15.13.8"
-  },
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "coverage": "jest --coverage",
-    "release": "semantic-release",
-    "release-local": "node -r dotenv/config node_modules/semantic-release/bin/semantic-release --no-ci",
-    "check-dependencies": "npx npm-check --skip-unused --update",
-    "lint": "eslint src examples",
-    "install-example-dependencies": "cd examples && npm install --prefix basic-starter basic-starter && cd .."
   },
   "dependencies": {
     "type-is": "^1.6.16"
